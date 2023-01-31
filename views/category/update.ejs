@@ -1,0 +1,25 @@
+<%- include('../layouts/header.ejs') %>
+    <div class="container p-4">
+        <form action="/categories/<%= category.id %>" method="post">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" value="<%= category.name %> " class="form-control" placeholder="Name"
+                            aria-describedby="helpId">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select class="form-control" name="status" id="status">
+                            <option value="1" <%= category.status == 1 ? "selected" : "" %>>Show</option>
+                            <option value="0" <%= category.status == 0 ? "selected" : "" %>>Hide</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-outline-dark btn-block rounded-0">Add</button>
+            </div>
+        </form>
+    </div>
+<%- include('../layouts/footer.ejs') %>

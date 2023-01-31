@@ -1,0 +1,1 @@
+// console log the connection details
